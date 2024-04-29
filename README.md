@@ -15,24 +15,41 @@ Below are example images from the dataset showing the lip region at the provided
 
 ### Duration Distribution
 The dataset totals approximately 68 hours. The following table illustrates the distribution of video clip durations within the dataset:
-| Duration Range | Number of Clips |
-| -------------- | --------------- |
-| 0-1 sec        | 500             |
-| 1-2 sec        | 1000            |
-| 2-5 sec        | 1500            |
-| >5 sec         | 200             |
+| Speaker | Total Duration (min) |
+|---------|----------------------|
+| S1      | 708.85               |
+| S2      | 671.99               |
+| S3      | 621.02               |
+| S4      | 584.59               |
+| S5      | 461.52               |
+| S6      | 324.00               |
+| S7      | 294.03               |
+| S8      | 171.56               |
+| S9      | 143.19               |
+| S10     | 82.91                |
+| S11     | 39.21                |
+| **Total** | **4103.37(68.3h)**       |
 
 ### Dataset Split
 The research article "Learning Separable Hidden Unit Contributions for Speaker-Adaptive Visual Speech Recognition" provides baseline Character Error Rate (CER) values for different data splits within the dataset. The dataset includes data from 11 hosts, with 10 used for training and 1 used for adaptation and testing.
 
-#### Results using Speaker 5 (Male) as the adaptation and test set:
-| Data Split     | CER (%)         |
-| -------------- | --------------- |
-| Training Set   | 15.2            |
-| Testing Set    | 17.8            |
+#### Results using Speaker 6 (Male) as the adaptation and test set:
+| Adapt (min) | Baseline (%) | Proposed Method (%)(LDVSD) |
+|-------------|--------------|---------------------|
+|                    | 19.61    | 19.37           |
+|                    | 21.53    | 20.69           |
+|                    | 18.65    | 18.55           |
+|                    | 17.55    | **16.72**           |
 
-#### Results using Speaker 7 (Female) as the adaptation and test set:
-Please add the corresponding CER results here once available.
+#### Results using Speaker 10 (Female) as the adaptation and test set:
+| Adapt (min) | Baseline (%) | Proposed Method (%)(LDVSD) |
+|-------------|--------------|---------------------|
+| 0           | 44.93        | 43.24               |
+| 1           | 38.63        | 37.38               |
+| 3           | 36.37        | 35.64               |
+| 5           | 33.79        | **33.17**               |
+
+For more details, please refer to the [GitHub repository](https://github.com/jinchiniao/LSHUC).
 
 ## Accessing the Dataset
 To access the CAS-VSR-S68 dataset, please send an email to [lipreading@vipl.ict.ac.cn](mailto:lipreading@vipl.ict.ac.cn) with your request. Upon signing the necessary agreements, a link to download the dataset will be provided. Please note that sharing the dataset with others is prohibited under the terms of the agreement.
