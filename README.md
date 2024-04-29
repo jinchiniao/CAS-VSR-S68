@@ -60,21 +60,24 @@ To access the CAS-VSR-S68 dataset, please send an email to [lipreading@vipl.ict.
 
 
 Example:
+```
 lip_imgs/
 ├── 0a1ddef8-20e6-2e4b-c002-6cb6c5923585.zip
 │ ├── 00000.jpg
 │ ├── 00001.jpg
 │ └── ...
-
+```
 ### `utterance` (Corresponding Text) 
 **After obtaining access and unzipping**, this directory Includes transcription files corresponding to the lip images. Each transcription file is associated with a specific image and is named using a combination of the UUID and image sequence number.
 
 Example:
+```
 utterance/
 ├── 0a1ddef8-20e6-2e4b-c002-6cb6c5923585_00000
 │ ├── 0001.txt
 │ ├── 0002.txt
 │ └── ...
+```
 ### `uuid2spk.csv` (UUID to Speaker Mapping)
 A CSV file that maps each utterance identifier (UUID) to a speaker identifier.
 This layout gives users a clear picture of the dataset's organization and how to locate specific pieces of information within it.
