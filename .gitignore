@@ -1,4 +1,7 @@
 lip_imgs/
 utterance/
+tmp/
 meta.py
 meta.csv
+get_example_image.py
+CAS-VSR-S68-Release Agreement-v3.docx
