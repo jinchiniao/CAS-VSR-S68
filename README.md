@@ -1,13 +1,14 @@
-# CAS-VSR-S68 Dataset
+# CAS-VSR-S68
 ![Cover Image](images/cover.jpg)
 ## Introduction
-The CAS-VSR-S68 is a comprehensive dataset designed for the extreme setting of unseen speakers' lip reading. It was compiled from news broadcast programs aired between 2009 and 2019, encompassing a diverse range of topics and speakers. The dataset is particularly challenging for lip reading tasks, featuring over 3800 commonly used Chinese characters and video clips with corresponding text annotations.
+CAS-VSR-S68 is a lip reading dataset designed for evaluation of the extreme setting where the speech content covers a large diversity with almost all the common Chinese characters while the number of speakers is limited to a small range. The data are collected from the news broadcast programs in 10 years, but with only 11 hosts as the speakers.  
 
 ## Data Description
-Clips are provided at a reduced resolution of 96x96 pixels, focusing solely on the lip region. This ensures adherence to privacy and security measures.
+The video clips of each speech are provided with the format of visual frames, which are given as reduced resolution of 96x96 pixels, focusing solely on the lip region. 
+Each clip's speech content includes Chinese characters, pinyin transcriptions, start and end times of each character and word, as well as the total number of characters and words. For more details, please refer to the utterance example provided in the [Example Utterance](###Example-Utterance).
 
-### Example Images
-Below are example images from the dataset showing the lip region at the provided resolution of 96x96 pixels:
+### Example Frames
+Below are example frames from the dataset showing the lip region with the provided resolution of 96x96 pixels:
 
 **Speaker 1:**
 ![Example Image 1](images/S1.jpg)
@@ -17,6 +18,29 @@ Below are example images from the dataset showing the lip region at the provided
 ![Example Image 3](images/S10.jpg)
 **Speaker 11:**
 ![Example Image 4](images/S11.jpg)
+### Example Utterance
+Here is the corresponding transcript for a particular sample.
+```
+full_align
+1
+num_tokens,num_words
+6,2
+sentence
+意见主要目标
+pinyin
+y@i_4 j@ian_4 zh@u_3 y@ao_4 m@u_4 b@iao_1
+token,start,end,pinyin
+意,48.33,48.54,y@i_4
+见,48.54,48.80,j@ian_4
+主,48.80,48.98,zh@u_3
+要,48.98,49.13,y@ao_4
+目,49.13,49.29,m@u_4
+标,49.29,49.79,b@iao_1
+word,token_start,token_end
+意见,0,2
+主要目标,2,6
+```
+
 ### Duration Distribution
 The dataset totals approximately 68 hours. The following table illustrates the distribution of video clip durations within the dataset:
 | Speaker | Total Duration (min) |
@@ -35,9 +59,10 @@ The dataset totals approximately 68 hours. The following table illustrates the d
 | **Total** | **4103.37(68.3h)**       |
 
 ### Dataset Split
-The research article "Learning Separable Hidden Unit Contributions for Speaker-Adaptive Visual Speech Recognition" provides baseline Character Error Rate (CER) values for different data splits within the dataset. The dataset includes data from 11 hosts, with 10 used for training and 1 used for adaptation and testing.
+By default, the data of 10 speakers are used for training, and one speaker for adaptation and testing each time.  In the dataset paper  "Learning Separable Hidden Unit Contributions for Speaker-Adaptive Visual Speech Recognition", speaker 6 (Male) and speaker 10 (Female) are used for evaluation separately. The results are as below.
 
-#### Results using Speaker 6 (Male) as the adaptation and test set:
+
+#### Results of using Speaker 6 (Male) as the adaptation and test set:
 | Adapt (min) | Baseline (%) | Proposed Method (%)(LDVSD) |
 |-------------|--------------|---------------------|
 | 0                  | 19.61    | 19.37           |
@@ -45,7 +70,7 @@ The research article "Learning Separable Hidden Unit Contributions for Speaker-A
 | 3                  | 18.65    | 18.55           |
 | 5                  | 17.55    | **16.72**           |
 
-#### Results using Speaker 10 (Female) as the adaptation and test set:
+#### Results of using Speaker 10 (Female) as the adaptation and test set:
 | Adapt (min) | Baseline (%) | Proposed Method (%)(LDVSD) |
 |-------------|--------------|---------------------|
 | 0           | 44.93        | 43.24               |
@@ -53,14 +78,24 @@ The research article "Learning Separable Hidden Unit Contributions for Speaker-A
 | 3           | 36.37        | 35.64               |
 | 5           | 33.79        | **33.17**               |
 
-For more details, please refer to the [GitHub repository](https://github.com/jinchiniao/LSHUC).
+For more results, please refer to the [paper](https://arxiv.org/abs/2310.05058) or [GitHub repo](https://github.com/jinchiniao/LSHUC).
 
 ## Accessing the Dataset
-To access the CAS-VSR-S68 dataset, please send an email to [lipreading@vipl.ict.ac.cn](mailto:lipreading@vipl.ict.ac.cn) with your request. **Currently, this data is only available to universities and research institutes for research purposes only.** Upon signing the necessary agreements, a link to download the dataset will be provided(CAS-VSR-S68-Release Agreement-v3.pdf). Please note that sharing the dataset with others is prohibited under the terms of the agreement.
-## File Structure and Contents
 
+To access the CAS-VSR-S68 dataset, please scan the signed agreement [here](CAS-VSR-S68-Release Agreement-v3.pdf) and send it to [lipreading@vipl.ict.ac.cn](mailto:lipreading@vipl.ict.ac.cn). **Please note that the is only available to universities and research institutes for research purposes only.** Sharing the dataset with others is not allowed under the terms of the agreement.
+
+## File Structure and Contents
+When you first download zip files, please extract it using the following command.
+```
+cat  CAS-VSR-S68.tar.gz* > CAS-VSR-S68.tar.gz
+tar -xzvf CAS-VSR-S68.tar.gz 
+```
 ### `lip_imgs` (Lip Images) 
-**After obtaining access and unzipping**, this directory contains folders of lip region images. Each folder is named with the unique identifier (UUID) of the video clip and contains a sequence of ``.jpg` images.
+For each sample, the visual sequence of the lip regions corresponding with each utterance is stored in a zip file. You can extract them with the following command.
+```
+unzip lip_imags/*.zip
+```
+this directory contains folders of lip region images. Each folder is named with the unique identifier (UUID) of the video clip and contains a sequence of ``.jpg` images.
 
 
 Example:
@@ -72,7 +107,7 @@ lip_imgs/
 │ └── ...
 ```
 ### `utterance` (Corresponding Text) 
-**After obtaining access and unzipping**, this directory Includes transcription files corresponding to the lip images. Each transcription file is associated with a specific image and is named using a combination of the UUID and image sequence number.
+This directory Includes transcription files corresponding to the lip images. Each transcription file is associated with a specific image and is named using a combination of the UUID and image sequence number.
 
 Example:
 ```
