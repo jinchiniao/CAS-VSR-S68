@@ -1,7 +1,7 @@
 # CAS-VSR-S68
 ![Cover Image](images/cover.jpg)
 ## Introduction
-CAS-VSR-S68 is a lip reading dataset designed for evaluation of the extreme setting where the speech content covers a large diversity with almost all the common Chinese characters while the number of speakers is limited to a small range. The data are collected from the news broadcast programs in 10 years, but with only 11 hosts as the speakers.  
+CAS-VSR-S68 is a lip reading dataset designed for evaluation of the extreme setting where the speech content is highly diverse, involving almost all common Chinese characters while the number of speakers is limited. The data is collected from the news broadcast programs in 10 years, but with only 11 hosts as the speakers.  
 
 ## Data Description
 The video clips of each speech are provided with the format of visual frames, which are given as reduced resolution of 96x96 pixels, focusing solely on the lip region. 
@@ -87,15 +87,15 @@ To access the CAS-VSR-S68 dataset, please scan the signed agreement [here](CAS-V
 ## File Structure and Contents
 When you first download zip files, please extract it using the following command.
 ```
-cat  CAS-VSR-S68.tar.gz* > CAS-VSR-S68.tar.gz
+cat CAS-VSR-S68.tar.gz* > CAS-VSR-S68.tar.gz
 tar -xzvf CAS-VSR-S68.tar.gz 
 ```
 ### `lip_imgs` (Lip Images) 
 For each sample, the visual sequence of the lip regions corresponding with each utterance is stored in a zip file. You can extract them with the following command.
 ```
-unzip lip_imags/*.zip
+unzip lip_imgs/*.zip
 ```
-this directory contains folders of lip region images. Each folder is named with the unique identifier (UUID) of the video clip and contains a sequence of ``.jpg` images.
+This directory contains folders of lip region images. Each folder is named with a unique identifier (UUID) of the video clip and contains a sequence of ``.jpg` images.
 
 
 Example:
@@ -107,7 +107,7 @@ lip_imgs/
 │ └── ...
 ```
 ### `utterance` (Corresponding Text) 
-This directory Includes transcription files corresponding to the lip images. Each transcription file is associated with a specific image and is named using a combination of the UUID and image sequence number.
+This directory includes transcription files corresponding to the lip images. Each transcription file is associated with a specific face track sequence and is named using a combination of the UUID and track sequence number.
 
 Example:
 ```
