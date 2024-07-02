@@ -1,14 +1,14 @@
 # CAS-VSR-S68
 ![Cover Image](images/cover.jpg)
 ## Introduction
-CAS-VSR-S68 is a lip reading dataset designed for evaluation of the extreme setting where the speech content is highly diverse, involving almost all common Chinese characters while the number of speakers is limited. The data is collected from the news broadcast programs in 10 years, but with only 11 hosts as the speakers.  
+CAS-VSR-S68 is a lip reading dataset designed for evaluating the challenging setting where the speech content is highly diverse, involving almost all common Chinese characters while the number of speakers is limited. The data is collected from over 10 years of the "News Broadcast" program, but with only 11 hosts as the speakers.  
 
 ## Data Description
-The video clips of each speech are provided with the format of visual frames, which are given as reduced resolution of 96x96 pixels, focusing solely on the lip region. 
-Each clip's speech content includes Chinese characters, pinyin transcriptions, start and end times of each character and word, as well as the total number of characters and words. For more details, please refer to the utterance example provided in the [Example Utterance](###Example-Utterance).
+The video clips of each speech are provided in the format of visual frames, which are given at a reduced resolution of 96x96 pixels, focusing solely on the lip region. 
+Each clip's speech content includes Chinese characters, *pinyin* transcriptions, start and end time of each character and word, as well as the total number of characters and words. For more details, please refer to an example utterance provided in "[Example Utterance](###example-utterance)".
 
 ### Example Frames
-Below are example frames from the dataset showing the lip region with the provided resolution of 96x96 pixels:
+Below are example frames from the dataset showing the lip region at the provided resolution of 96x96 pixels:
 
 **Speaker 1:**
 ![Example Image 1](images/S1.jpg)
@@ -59,11 +59,11 @@ The dataset totals approximately 68 hours. The following table illustrates the d
 | **Total** | **4103.37(68.3h)**       |
 
 ### Dataset Split
-By default, the data of 10 speakers are used for training, and one speaker for adaptation and testing each time.  In the dataset paper  "Learning Separable Hidden Unit Contributions for Speaker-Adaptive Visual Speech Recognition", speaker 6 (Male) and speaker 10 (Female) are used for evaluation separately. The results are as below.
+By default, the data of 10 speakers are used for training, and one speaker for adaptation and testing each time. In the paper accompanying the dataset, "Learning Separable Hidden Unit Contributions for Speaker-Adaptive Visual Speech Recognition", speaker 6 (Male) and speaker 10 (Female) are used for evaluation separately. The results are as below.
 
 
 #### Results of using Speaker 6 (Male) as the adaptation and test set:
-| Adapt (min) | Baseline (%) | Proposed Method (%)(LDVSD) |
+| Adapt (min) | Baseline (%) | Proposed Method (LSHUC) (%) |
 |-------------|--------------|---------------------|
 | 0                  | 19.61    | 19.37           |
 | 1                  | 21.53    | 20.69           |
@@ -71,7 +71,7 @@ By default, the data of 10 speakers are used for training, and one speaker for a
 | 5                  | 17.55    | **16.72**           |
 
 #### Results of using Speaker 10 (Female) as the adaptation and test set:
-| Adapt (min) | Baseline (%) | Proposed Method (%)(LDVSD) |
+| Adapt (min) | Baseline (%) | Proposed Method (LSHUC) (%) |
 |-------------|--------------|---------------------|
 | 0           | 44.93        | 43.24               |
 | 1           | 38.63        | 37.38               |
@@ -82,16 +82,16 @@ For more results, please refer to the [paper](https://arxiv.org/abs/2310.05058) 
 
 ## Accessing the Dataset
 
-To access the CAS-VSR-S68 dataset, please scan the signed agreement [here](CAS-VSR-S68-Release Agreement-v3.pdf) and send it to [lipreading@vipl.ict.ac.cn](mailto:lipreading@vipl.ict.ac.cn). **Please note that the is only available to universities and research institutes for research purposes only.** Sharing the dataset with others is not allowed under the terms of the agreement.
+To access the CAS-VSR-S68 dataset, please scan the signed agreement [here](CAS-VSR-S68-Release Agreement-v3.pdf) and send it to [lipreading@vipl.ict.ac.cn](mailto:lipreading@vipl.ict.ac.cn). **Please note that the dataset is only available to universities and research institutes for research purposes only.** Sharing the dataset with others is **not allowed** under the terms of the agreement.
 
 ## File Structure and Contents
-When you first download zip files, please extract it using the following command.
+After downloading the zip files, please extract them using the following commands:
 ```
 cat CAS-VSR-S68.tar.gz* > CAS-VSR-S68.tar.gz
 tar -xzvf CAS-VSR-S68.tar.gz 
 ```
 ### `lip_imgs` (Lip Images) 
-For each sample, the visual sequence of the lip regions corresponding with each utterance is stored in a zip file. You can extract them with the following command.
+For each sample, the lip region image sequence corresponding to each utterance is stored in a zip file. You can extract them with the following command:
 ```
 unzip lip_imgs/*.zip
 ```
@@ -125,7 +125,7 @@ This layout gives users a clear picture of the dataset's organization and how to
 This document contains the terms and conditions for accessing the CAS-VSR-S68 dataset. Interested parties must review and agree to the stipulations in this agreement before receiving authorization to access the dataset files.
 
 ## Data Privacy and Security
-Due to data privacy, security concerns, and agreements made with the broadcasting company, only the lip region of the videos at a resolution of 96x96 pixels is available. Users are expected to comply with all guidelines and not distribute the data.
+Due to data privacy and security concerns, and agreements made with the broadcasting company, only the lip region of the videos at a resolution of 96x96 pixels is available. Users are expected to comply with all guidelines and not distribute the data.
 
 ## Citation
 If you use the CAS-VSR-S68 dataset in your research, please cite it as follows:
