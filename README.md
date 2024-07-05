@@ -82,7 +82,7 @@ For more results, please refer to the [paper](https://arxiv.org/abs/2310.05058) 
 
 ## Accessing the Dataset
 
-To access the CAS-VSR-S68 dataset, please scan the signed agreement [here](CAS-VSR-S68-Release Agreement-v3.pdf) and send it to [lipreading@vipl.ict.ac.cn](mailto:lipreading@vipl.ict.ac.cn). **Please note that the dataset is only available to universities and research institutes for research purposes only.** Sharing the dataset with others is **not allowed** under the terms of the agreement.
+To access the CAS-VSR-S68 dataset, please scan the signed agreement [here](CAS-VSR-S68-Release Agreement-v3.pdf) and send it to [lipreading@vipl.ict.ac.cn](mailto:lipreading@vipl.ict.ac.cn). **Please note that the dataset is only available to universities and research institutes for research purposes only.** Note that the agreement should be signed by **a full-time staff member (usually your tutor).**  Sharing the dataset with others is **not allowed** under the terms of the agreement.
 
 ## File Structure and Contents
 After downloading the zip files, please extract them using the following commands:
